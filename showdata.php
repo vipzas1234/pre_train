@@ -8,7 +8,7 @@ if(isset($_GET['user_ID'])){
     $result = mysqli_query($conn,$query);
 
     if($result){
-        // header("location:showdata.php");
+        header("location:showdata.php");
     }else{
         echo "Error";
     }
@@ -60,7 +60,6 @@ if(isset($_GET['user_ID'])){
         ?>
     </table>
     <br>
-    <button><a href="">เข้าสู่หน้า Redoc</a></button>
 
 
 

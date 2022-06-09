@@ -8,6 +8,7 @@ form{
     text-align: center;
 }
 
+
 label{
     padding-right: 30px;
     font-size: 18px;
@@ -22,7 +23,7 @@ input{
 }
 
 .wrapper{
-    background-color: rgb(230, 245, 248);
+    background-color: rgb(213, 241, 247);
     padding: 20px;
 }
 

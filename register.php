@@ -29,7 +29,7 @@
         echo    "<labal>บันทึกสำเร็จ !!!</labal><br>";
         echo    "<a href='showdata.php'><button>เข้าสู่ระบบ</button></a>";
         
-        echo json_encode($data);
+        // echo json_encode($data);
     }else{
         echo "error";
     }

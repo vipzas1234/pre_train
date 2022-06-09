@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <?php include "database.php"; ?>
 
     <?php
@@ -21,15 +20,17 @@
     // echo $Username ,"<br>";
     // echo $Password ,"<br>";
 
-    $query = " SELECT * FROM admin WHERE Username = '$Username' AND Password ='$Password' ";
+    $query = " SELECT * FROM user WHERE user_Username = '$Username' AND user_Password ='$Password' ";
     $result = mysqli_query($conn, $query);
 
     if (mysqli_num_rows($result) > 0) {
+
+
     ?>
         <div class="wrapper">
 
-            <labal>เข้าสู่ระบบสำเร็จ</labal><br>
-            <a href='index.html'><button>เข้าสู่ระบบ</button></a>
+        <labal>เข้าสู่ระบบสำเร็จ</labal><br>
+        <a href='showdata.php'><button>เข้าสู่ระบบ</button></a>
         </div>
 
     <?php
