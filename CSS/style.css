@@ -1,0 +1,32 @@
+body{
+    margin: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+form{
+    margin: 50px;
+    text-align: center;
+}
+
+label{
+    padding-right: 30px;
+    font-size: 18px;
+}
+
+input{
+    height: 20px;
+}
+
+.text{
+    margin: 15px;
+}
+
+.wrapper{
+    background-color: rgb(230, 245, 248);
+    padding: 20px;
+}
+
+.submit{
+    width: 60px;
+    height: 30px;
+}
