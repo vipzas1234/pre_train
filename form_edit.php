@@ -23,10 +23,12 @@ if(mysqli_num_rows($result) > 0){
 </head>
 <body>
     
-    <form action="register.php" method="post">
+    <form action="edit_db.php" method="post">
         
         <div class="wrapper">
             <h2>แก้ไขข้อมูล</h2>
+
+            <input hidden type="text" name="user_ID" placeholder="user_ID" value="<?=$row['user_ID'];?>"><br> 
 
             <div class="text">
                 <label for="">Username</label>
