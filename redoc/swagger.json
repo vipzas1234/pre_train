@@ -1,21 +1,419 @@
 {
     "swagger": "2.0",
-
+    "info": {
+        "description": "เซอร์วิสสำหรับการการสร้าง เพิ่ม/ลบ/แก้ User",
+        "title": "Service for creating, adding/deleting/editing users",
+    },
+    "host": "https://apis.eng.psu.ac.th",
+    "basePath": "/asset/notification",
+    "schemes": [
+        "https",
+        "http"
+    ],
     "paths": {
-
-
-
-
-
-
-
-
+        "v1/Register": {
+            "get": {
+                "tags": [
+                    "Register",
+                ],
+                "summary": "สมัครสมาชิกเพื่อเข้าสู่ระบบ",
+                "description": "สมัครสมาชิกเพื่อเข้าสู่ระบบ",
+                "operationId": "Regis",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_ID",
+                        "in": "formData",
+                        "description": "เลข id ผูใช้งาน",
+                        "required": false,
+                        "type": "int"
+                    },
+                    {
+                        "name": "user_Username",
+                        "in": "formData",
+                        "description": "ชื่อผู้ใช้งาน",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_Password",
+                        "in": "formData",
+                        "description": "รหัสผ่านผูใช้งาน",
+                        "url": "https://www.eng.psu.ac.th",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_Firstname",
+                        "in": "formData",
+                        "description": "ชื่อจริงผู้ใช้งาน",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_Lastname",
+                        "in": "formData",
+                        "description": "นามสกุลผู้ใช้งาน",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "เพิ่มข้อมูลสำเร็จ",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer Token": [
+                            "write:Token",
+                            "read:Token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "v1/Login": {
+            "get": {
+                "tags": [
+                    "Login"
+                ],
+                "summary": "การส่งข้อมูลชื่อผู้ใช้และรหัสผ่านเพื่อล็อคอิน",
+                "description": "การส่งข้อมูลชื่อผู้ใช้และรหัสผ่านเพื่อล็อคอิน",
+                "operationId": "LoginUser",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "parameters": [
+                    {
+                        "name": "Username",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string",
+                        "example": "Mek",
+                        "description": "กรอกชื่อผู้ใช้"
+                        
+                    },
+                    {
+                        "name": "Password",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string",
+                        "example": "1234",
+                        "description": "กรอกรหัสผ่าน"
+                    },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ล็อคอินสำเร็จ",
+                        "schema": {
+                            "$ref": "#/definitions/Login"
+                        }
+                    },
+                    "401": {
+                        "description": "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer Token": [
+                            "write:Token",
+                            "read:Token"
+                        ]
+                    }
+                ]
+            },
+        },
+        "v1/Delete": {
+            "get": {
+                "tags": [
+                    "DeleteUser"
+                ],
+                "summary": "DeleteUser",
+                "description": "ส่งข้อมูลชื่อผู้ใช้เพื่อลบข้อมูลผู้ใช้",
+                "operationId": "Delete",
+                "consumes": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "produces": [
+                    "application/json",
+                    "application/xml"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ลบข้อมูลเรียบร้อย",
+                        "schema": {
+                            "$ref": "#/definitions/DeleteUser"
+                        }
+                    },
+                    "401": {
+                        "description": "ไม่สามารถลบข้อมูลได้/ผิดพลาด",
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer Token": [
+                            "write:Token",
+                            "read:Token"
+                        ]
+                    }
+                ]
+            },
+        },
+        "v1/reqEdit": {
+            "post": {
+                "tags": [
+                    "reqEdit",
+                ],
+                "summary": "ส่งเลข Id เพื่อร้องขอการกรอกข้อมูลแก้ไขข้อมูลสมาชิก",
+                "description": "ส่งเลข Id เพื่อร้องขอการกรอกข้อมูลแก้ไขข้อมูลสมาชิก",
+                "operationId": "EditUser",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "UserId",
+                        "in": "formData",
+                        "description": "เลขไอดีหลัก",
+                        "required": true,
+                        "type": "interger"
+                    },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ร้องขอสำเร็จ/กรอกข้อมูล",
+                        "schema": {
+                            "$ref": "#/definitions/reqEdit"
+                        }
+                    },
+                    "401": {
+                        "description": "ไม่สามารถเข้าการแก้ไขข้อมูลนี้ได้"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer Token": [
+                            "write:Token",
+                            "read:Token"
+                        ]
+                    }
+                ]
+            }
+        },
+        "/v1/Edit": {
+            "get": {
+                "tags": [
+                    "Edit",
+                ],
+                "summary": "ส่งข้อมูลผู้ใช้เพื่อแก้ไข",
+                "description": "ส่งข้อมูลผู้ใช้เพื่อแก้ไข",
+                "operationId": "UserEdit",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "user_Username",
+                        "in": "formData",
+                        "description": "ชื่อผู้ใช้",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_Password",
+                        "in": "formData",
+                        "description": "รหัสผ่านผู้ใช้งาน",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_Firstname",
+                        "in": "formData",
+                        "description": "ชื่อจริงผู้ใช้งาน",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "user_Lastname",
+                        "in": "formData",
+                        "description": "นามสกุลผู้ใช้งาน",
+                        "required": true,
+                        "type": "string"
+                    },
+                ],
+                "responses": {
+                    "200": {
+                        "description": "แก้ไขสำเร็จ",
+                        "schema": {
+                            "$ref": "#/definitions/Edit"
+                        }
+                    },
+                    "401": {
+                        "description": "แก้ไขข้อมูลไม่สำเร็จ"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer Token": [
+                            "write:Token",
+                            "read:Token"
+                        ]
+                    }
+                ]
+            }
+        },
+    },
+    "securityDefinitions": {
+        "api_key": {
+            "type": "apiKey",
+            "name": "api_key",
+            "in": "header"
+        },
+        "Bearer Token": {
+            "type": "oauth2",
+            "authorizationUrl": "https://petstore.swagger.io/oauth/authorize",
+            "flow": "implicit",
+            "scopes": {
+                "read:pets": "read your Token",
+                "write:pets": "modify Token in your account"
+            }
+        }
+    },
+    "definitions": {
+        "ApiResponse": {
+            "type": "object",
+            "properties": {
+                "user_ID": {
+                    "type": "integer",
+                    "format": "int64",
+                    "example": "1",
+                },
+                "user_Username": {
+                    "type": "string",
+                    "example": "mek",
+                },
+                "user_Password": {
+                    "type": "string",
+                    "example": "1234",
+                },
+                "user_Firstname": {
+                    "type": "string",
+                    "example": "mek",
+                },
+                "user_Lastname": {
+                    "type": "string",
+                    "example": "Chantawan"
+                },
+            },
+        },
+        "Login": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "example": "Mek",
+                    "description": "ชื่อผู้ใช้"
+                },
+                "edu_term": {
+                    "type": "interger",
+                    "format": "int64",
+                    "example": "1234",
+                    "description": "รหัสผ่าน"
+                },
+            },
+        },
+        "DeleteUser": {
+            "type": "object",
+            "properties": {
+                "UserID": {
+                    "type": "interger",
+                    "format": "int64",
+                    "example": "1",
+                }
+            },
+        },
+        "reqEdit": {
+            "type": "object",
+            "properties": {
+                "Userid": {
+                    "type": "integer",
+                    "description": "ID ผู้ใช้งาน"
+                },
+            },
+        },
+        "Edit": {
+            "type": "object",
+            "properties": {
+                "user_Username": {
+                    "type": "string",
+                    "description": "ชื่อผู้ใช้",
+                    "example": "Mek11"
+                },
+                "user_Password": {
+                    "type": "string",
+                    "description": "Username ของผู้ใช้",
+                    "example": "12345",
+                },
+                "user_Firstname": {
+                    "type": "string",
+                    "description": "ชื่อจริงผู้ใช้งาน",
+                    "example": "Mek",
+                },
+                "user_Lastname": {
+                    "type": "string",
+                    "description": "นามสกุลของผู้ใช้งาน",
+                    "example": "Mok"
+                },
+            },
+        },
+        "dailiesSendTimes": {
+            "type": "object",
+            "properties": {
+                "heading": {
+                    "type": "string",
+                    "description": "ชื่อของหัวเรื่องที่ส่ง"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "รายละเอียดของข้อความที่ส่ง"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Url ของ link สำหรับเข้าไปดูข้อมูลเพิ่มเติม"
+                },
+                "sender_name": {
+                    "type": "string",
+                    "description": "ชื่อของผู้ส่ง"
+                },
+                "time_stamp": {
+                    "type": "string",
+                    "description": "ประทับเวลาแบบ unix time"
+                },
+                "total_forced_recipients": {
+                    "type": "string",
+                    "description": "จำนวนทั้งหมดที่ส่งถึงผู้รับ"
+                },
+                "total_messageable_recipients": {
+                    "type": "string",
+                    "description": "จำนวนทั้งหมดที่สามารถส่งได้"
+                },
+            },
+        },
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
     }
-
-
-
-
-
-
-
 }
