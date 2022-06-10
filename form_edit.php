@@ -21,6 +21,82 @@ if(mysqli_num_rows($result) > 0){
     <link rel="stylesheet" href="CSS/style.css">
     <title>index</title>
 </head>
+<style>
+    body{
+        text-align: center;
+    }
+    .btn {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+        margin: 20px;
+        width: 120px;
+        height: 35px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        background: white;
+        border: 1px solid black;
+        box-shadow: 2px 2px 0 black,
+            -2px -2px 0 black,
+            -2px 2px 0 black,
+            2px -2px 0 black;
+        transition: 500ms ease-in-out;
+    }
+
+    button:hover {
+        box-shadow: 10px 5px 0 black, -10px -5px 0 black;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    .wrapper {
+        text-align: center;
+    }
+
+    input {
+        height: 20px;
+    }
+
+    label {
+
+        padding-right: 30px;
+        font-size: 18px;
+    }
+
+    .text {
+        margin: 15px;
+    }
+    .wrapper{
+        border: 1;
+        background-color: rgb(223, 242, 255);
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 300px;
+        margin-right: 300px;
+        padding: 0px;
+        padding-bottom:20px ;
+        
+    }
+    .submit{
+        margin-left: 15px;
+        background-color: gray;
+        color: white;
+        width: 10%;
+        height: 30px;
+        border-radius: 8px;
+    }
+</style>
 <body>
     
     <form action="edit_db.php" method="post">
@@ -28,7 +104,7 @@ if(mysqli_num_rows($result) > 0){
         <div class="wrapper">
             <h2>แก้ไขข้อมูล</h2>
 
-            <input hidden type="text" name="user_ID" placeholder="user_ID" value="<?=$row['user_ID'];?>"><br> 
+            <input type="hidden" name="user_ID" placeholder="user_ID" value="<?=$row['user_ID'];?>"><br> 
 
             <div class="text">
                 <label for="">Username</label>

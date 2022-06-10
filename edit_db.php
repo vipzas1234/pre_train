@@ -1,3 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Login</title>
+</head>
+
+<style>
+    body {
+        font-size: 20px;
+    }
+
+    .wrapper {
+        background-color: rgb(223, 242, 255);
+        text-align: center;
+
+    }
+
+    button {
+        margin-top: 10px;
+        background-color: gray;
+        color: white;
+        width: 100px;
+        height: 30px;
+        border-radius: 8px;
+    }
+</style>
+
+<body>
+
 <?php 
     include "database.php"; 
 
@@ -33,14 +67,22 @@
     }
 
     if($result){
-        echo    "<labal>แก้ไขสำเร็จ</labal><br>";
-        echo    "<a href='showdata.php'><button>เข้าสู่ระบบ</button></a><br>";
-        
-        // echo json_encode($data);
+        ?>
+        <div class="wrapper">
 
+            <labal>แก้ไขสำเร็จ</labal><br>
+            <a href='showdata.php'><button>เข้าสู่ระบบ</button></a>
+        </div>
+
+    <?php
     }else{
         echo "error";
     }
 
 
 ?>
+
+
+</body>
+
+</html>

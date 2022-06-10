@@ -56,8 +56,13 @@
 
     <?php
     } else {
-        echo    "<labal>เข้าสู่ระบบไม่สำเร็จ</labal><br>";
-        echo    "<a href='login.html'><button>ย้อนหลัง</button></a>";
+    ?>
+        <div class="wrapper">
+
+            <labal>เข้าสู่ระบบไม่สำเร็จ</labal><br>
+            <a href='login.html'><button>ย้อนกลับ</button></a>
+        </div>
+    <?php
     }
 
 

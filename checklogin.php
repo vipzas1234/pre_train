@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
     <title>Login</title>
 </head>
 
@@ -55,8 +54,13 @@
 
     <?php
     } else {
-        echo    "<labal>เข้าสู่ระบบไม่สำเร็จ</labal><br>";
-        echo    "<a href='login.html'><button>ย้อนหลัง</button></a>";
+    ?>
+        <div class="wrapper">
+
+            <labal>เข้าสู่ระบบไม่สำเร็จ</labal><br>
+            <a href='login.html'><button>ย้อนกลับ</button></a>
+        </div>
+    <?php
     }
 
 
