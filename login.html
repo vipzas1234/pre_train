@@ -5,36 +5,111 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
     <title>Login</title>
 </head>
 
+<style>
+    .btn {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+        margin: 20px;
+        width: 150px;
+        height: 35px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        color: black;
+        background: white;
+        border: 1px solid black;
+        box-shadow: 2px 2px 0 black,
+            -2px -2px 0 black,
+            -2px 2px 0 black,
+            2px -2px 0 black;
+        transition: 500ms ease-in-out;
+    }
+
+    button:hover {
+        box-shadow: 10px 5px 0 black, -10px -5px 0 black;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    .wrapper {
+        text-align: center;
+    }
+
+    input {
+        height: 20px;
+    }
+
+    label {
+
+        padding-right: 30px;
+        font-size: 18px;
+    }
+
+    .text {
+        margin: 15px;
+    }
+    .wrapper{
+        border: 1;
+        background-color: rgb(223, 242, 255);
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 300px;
+        margin-right: 300px;
+        padding: 0px;
+        padding-bottom:20px ;
+        
+    }
+    .submit{
+        background-color: gray;
+        color: white;
+        width: 20%;
+        height: 30px;
+        border-radius: 8px;
+    }
+</style>
+
 <body>
-    <div style="margin-top: 50px;margin-bottom: 5px; text-align: center;">
-        <button style="width: 200px; height: 30px;"><a href="login.html" style="text-decoration: none; color: black;">login Admin</a></button>
-        <button style="width: 200px; height: 30px;"><a href="loginuser.html" style="text-decoration: none;color: black;">login User</a></button>
-    </div>
-
-    <form action="checklogin.php" method="get">
-        <div class="wrapper">
-            <h2>LOGIN ADMIN</h2>
-
-            <div class="text">
-                <label for="Username">Username</label>
-                <input type="text" name="Username" placeholder="Username">
-            </div>
-
-            <div class="text">
-                <label for="Password">Password</label>
-                <input type="text" name="Password" placeholder="Password">
-            </div>
-
-            <input class="submit" type="submit" value="login">
-
+    <div class="wrapper"> 
+        <div style="margin-top: 50px;margin-bottom: 5px; text-align: center;">
+            <button class="btn"><a href="login.html" style="text-decoration: none; color: black;">login
+                    Admin</a></button>
+            <button class="btn"><a href="loginuser.html" style="text-decoration: none;color: black;">login
+                    User</a></button>
         </div>
 
-    </form>
+        <form action="checklogin.php" method="get">
+            <div class="wrapper">
+                <h2>LOGIN ADMIN</h2>
 
+                <div class="text">
+                    <label for="Username">Username</label>
+                    <input type="text" name="Username" placeholder="Username">
+                </div>
+
+                <div class="text">
+                    <label for="Password">Password</label>
+                    <input type="text" name="Password" placeholder="Password">
+                </div>
+
+                <input class="submit" type="submit" value="login">
+
+            </div>
+
+        </form>
+    </div>
 
 </body>
 

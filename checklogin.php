@@ -9,6 +9,27 @@
     <title>Login</title>
 </head>
 
+<style>
+    body {
+        font-size: 20px;
+    }
+
+    .wrapper {
+        background-color: rgb(223, 242, 255);
+        text-align: center;
+
+    }
+
+    button {
+        margin-top: 10px;
+        background-color: gray;
+        color: white;
+        width: 100px;
+        height: 30px;
+        border-radius: 8px;
+    }
+</style>
+
 <body>
 
     <?php include "database.php"; ?>

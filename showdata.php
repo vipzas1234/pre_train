@@ -25,9 +25,50 @@ if(isset($_GET['user_ID'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Showdata</title>
 </head>
+<style>
+    .btn {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+        margin-top: 10px;
+        margin-right: 50px;
+        width: 120px;
+        height: 35px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        color: black;
+        background: white;
+        border: 1px solid black;
+        box-shadow: 2px 2px 0 black,
+            -2px -2px 0 black,
+            -2px 2px 0 black,
+            2px -2px 0 black;
+        transition: 500ms ease-in-out;
+    }
+
+    button:hover {
+        box-shadow: 10px 5px 0 black, -10px -5px 0 black;
+    }
+
+    button:focus {
+        outline: none;
+    }
+    table{
+        margin: 50px;
+	    border:1px solid ;
+    }
+
+</style>
 <body>
-    <button style="float:right; width: 200px; hight:100px;"><a href="login.html" >ออกระบบ</a></button>
-    <br><br>
+
     <table border="1" cellspacing="0"> 
         <tr>
             <th>user_ID</th>
@@ -51,15 +92,15 @@ if(isset($_GET['user_ID'])){
                     <td width="5%"><?=$row['user_Password'];?></td>
                     <td width="5%"><?=$row['user_Firstname'];?></td>
                     <td width="5%"><?=$row['user_Lastname'];?></td>
-                    <td width="5%"><a href="form_edit.php?user_ID=<?=$row['user_ID'];?>">แก้ไข</a></td>
-                    <td width="5%"><a href="showdata.php?user_ID=<?=$row['user_ID'];?>">ลบ</a></td>
+                    <td width="2%"><a href="form_edit.php?user_ID=<?=$row['user_ID'];?>" style="text-decoration: none;color: blue;">แก้ไข</a></td>
+                    <td width="2%"><a href="showdata.php?user_ID=<?=$row['user_ID'];?>" style="text-decoration: none;color: red;">ลบ</a></td>
                     </tr>
         <?php
                 }
             }
         ?>
     </table>
-    <br>
+    <button style="float:right;"><a href="login.html" style="text-decoration: none;color: black;">ออกระบบ</a></button>
 
 
 
