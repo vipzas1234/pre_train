@@ -59,7 +59,9 @@
     }
 
     if ($result) {
+        echo json_encode($data);
     ?>
+    
         <div class="wrapper">
 
             <labal>เข้าสู่ระบบสำเร็จ</labal><br>

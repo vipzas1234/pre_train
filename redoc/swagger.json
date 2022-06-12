@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "description": "เซอร์วิสสำหรับการการสร้าง เพิ่ม/ลบ/แก้ User",
-        "title": "Service for creating, adding/deleting/editing users",
+        "title": "Service for creating, adding/deleting/editing users"
     },
     "host": "https://apis.eng.psu.ac.th",
     "basePath": "/asset/notification",
@@ -14,7 +14,7 @@
         "v1/Register": {
             "get": {
                 "tags": [
-                    "Register",
+                    "Register"
                 ],
                 "summary": "สมัครสมาชิกเพื่อเข้าสู่ระบบ",
                 "description": "สมัครสมาชิกเพื่อเข้าสู่ระบบ",
@@ -22,6 +22,7 @@
                 "produces": [
                     "application/json"
                 ],
+
                 "parameters": [
                     {
                         "name": "user_ID",
@@ -111,7 +112,7 @@
                         "type": "string",
                         "example": "1234",
                         "description": "กรอกรหัสผ่าน"
-                    },
+                    }
                 ],
                 "responses": {
                     "200": {
@@ -132,7 +133,7 @@
                         ]
                     }
                 ]
-            },
+            }
         },
         "v1/Delete": {
             "get": {
@@ -158,7 +159,7 @@
                         }
                     },
                     "401": {
-                        "description": "ไม่สามารถลบข้อมูลได้/ผิดพลาด",
+                        "description": "ไม่สามารถลบข้อมูลได้/ผิดพลาด"
                     }
                 },
                 "security": [
@@ -169,12 +170,12 @@
                         ]
                     }
                 ]
-            },
+            }
         },
         "v1/reqEdit": {
             "post": {
                 "tags": [
-                    "reqEdit",
+                    "reqEdit"
                 ],
                 "summary": "ส่งเลข Id เพื่อร้องขอการกรอกข้อมูลแก้ไขข้อมูลสมาชิก",
                 "description": "ส่งเลข Id เพื่อร้องขอการกรอกข้อมูลแก้ไขข้อมูลสมาชิก",
@@ -189,7 +190,7 @@
                         "description": "เลขไอดีหลัก",
                         "required": true,
                         "type": "interger"
-                    },
+                    }
                 ],
                 "responses": {
                     "200": {
@@ -215,7 +216,7 @@
         "/v1/Edit": {
             "get": {
                 "tags": [
-                    "Edit",
+                    "Edit"
                 ],
                 "summary": "ส่งข้อมูลผู้ใช้เพื่อแก้ไข",
                 "description": "ส่งข้อมูลผู้ใช้เพื่อแก้ไข",
@@ -251,7 +252,7 @@
                         "description": "นามสกุลผู้ใช้งาน",
                         "required": true,
                         "type": "string"
-                    },
+                    }
                 ],
                 "responses": {
                     "200": {
@@ -273,7 +274,7 @@
                     }
                 ]
             }
-        },
+        }
     },
     "securityDefinitions": {
         "api_key": {
@@ -298,25 +299,25 @@
                 "user_ID": {
                     "type": "integer",
                     "format": "int64",
-                    "example": "1",
+                    "example": "1"
                 },
                 "user_Username": {
                     "type": "string",
-                    "example": "mek",
+                    "example": "mek"
                 },
                 "user_Password": {
                     "type": "string",
-                    "example": "1234",
+                    "example": "1234"
                 },
                 "user_Firstname": {
                     "type": "string",
-                    "example": "mek",
+                    "example": "mek"
                 },
                 "user_Lastname": {
                     "type": "string",
                     "example": "Chantawan"
-                },
-            },
+                }
+            }
         },
         "Login": {
             "type": "object",
@@ -331,8 +332,8 @@
                     "format": "int64",
                     "example": "1234",
                     "description": "รหัสผ่าน"
-                },
-            },
+                }
+            }
         },
         "DeleteUser": {
             "type": "object",
@@ -340,9 +341,9 @@
                 "UserID": {
                     "type": "interger",
                     "format": "int64",
-                    "example": "1",
+                    "example": "1"
                 }
-            },
+            }
         },
         "reqEdit": {
             "type": "object",
@@ -350,8 +351,8 @@
                 "Userid": {
                     "type": "integer",
                     "description": "ID ผู้ใช้งาน"
-                },
-            },
+                }
+            }
         },
         "Edit": {
             "type": "object",
@@ -364,19 +365,19 @@
                 "user_Password": {
                     "type": "string",
                     "description": "Username ของผู้ใช้",
-                    "example": "12345",
+                    "example": "12345"
                 },
                 "user_Firstname": {
                     "type": "string",
                     "description": "ชื่อจริงผู้ใช้งาน",
-                    "example": "Mek",
+                    "example": "Mek"
                 },
                 "user_Lastname": {
                     "type": "string",
                     "description": "นามสกุลของผู้ใช้งาน",
                     "example": "Mok"
-                },
-            },
+                }
+            }
         },
         "dailiesSendTimes": {
             "type": "object",
@@ -408,9 +409,9 @@
                 "total_messageable_recipients": {
                     "type": "string",
                     "description": "จำนวนทั้งหมดที่สามารถส่งได้"
-                },
-            },
-        },
+                }
+            }
+        }
     },
     "externalDocs": {
         "description": "Find out more about Swagger",
