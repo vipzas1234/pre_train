@@ -1,0 +1,27 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "\u0e40\u0e0b\u0e2d\u0e23\u0e4c\u0e27\u0e34\u0e2a\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e01\u0e32\u0e23\u0e2a\u0e23\u0e49\u0e32\u0e07",
+        "title": "Service for creating, adding\/deleting\/editing users"
+    },
+    "paths": {
+        "Register": {
+            "post": {
+                "summary": "dsad",
+                "description": "dsadsds",
+                "operationId": "ddddddddddddddddd",
+                "parameters": [
+                    "aaa"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "sucssess"
+                    },
+                    "401": {
+                        "description": "The access token provided is invalid"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -4,12 +4,7 @@
         "description": "เซอร์วิสสำหรับการการสร้าง เพิ่ม/ลบ/แก้ User",
         "title": "Service for creating, adding/deleting/editing users"
     },
-    "host": "https://apis.eng.psu.ac.th",
-    "basePath": "/asset/notification",
-    "schemes": [
-        "https",
-        "http"
-    ],
+
     "paths": {
         "v1/Register": {
             "get": {
@@ -19,10 +14,6 @@
                 "summary": "สมัครสมาชิกเพื่อเข้าสู่ระบบ",
                 "description": "สมัครสมาชิกเพื่อเข้าสู่ระบบ",
                 "operationId": "Regis",
-                "produces": [
-                    "application/json"
-                ],
-
                 "parameters": [
                     {
                         "name": "user_ID",
@@ -413,8 +404,5 @@
             }
         }
     },
-    "externalDocs": {
-        "description": "Find out more about Swagger",
-        "url": "http://swagger.io"
-    }
+
 }

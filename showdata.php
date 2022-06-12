@@ -1,10 +1,10 @@
 <?php include "database.php";
 
-if (isset($_GET['user_ID'])) {
+if (isset($_GET['api_ID'])) {
 
-    $user_ID = $_GET['user_ID'];
+    $api_ID = $_GET['api_ID'];
 
-    $query = "DELETE FROM user WHERE user_ID =$user_ID";
+    $query = "DELETE FROM api WHERE api_ID = $api_ID";
     $result = mysqli_query($conn, $query);
 
     if ($result) {
@@ -66,11 +66,16 @@ if (isset($_GET['user_ID'])) {
         margin: 50px;
         border: 1px solid;
     }
+    td{
+        height: 70px;
+    }
 </style>
 
 <body>
 
-    <table border="1" cellspacing="0">
+    <button  style=" margin-bottom:20px;margin-left:60px;"><a href="addapi.php" style="text-decoration: none;color: black;">เพิ่ม API</a></button>
+
+    <table border="1" cellspacing="0" style="margin-top:20px;">
         <tr>
             <th>user_ID</th>
             <th>user_Username</th>
@@ -80,7 +85,7 @@ if (isset($_GET['user_ID'])) {
             <th colspan="2">manage</th>
         </tr>
         <?php
-        $query = "SELECT * FROM user";
+        $query = "SELECT * FROM api";
         $result = mysqli_query($conn, $query);
         $num_row = mysqli_num_rows($result);
 
@@ -88,13 +93,13 @@ if (isset($_GET['user_ID'])) {
             while ($row = $result->fetch_assoc()) {
         ?>
                 <tr>
-                    <td width="5%"><?= $row['user_ID']; ?></td>
-                    <td width="5%"><?= $row['user_Username']; ?></td>
-                    <td width="5%"><?= $row['user_Password']; ?></td>
-                    <td width="5%"><?= $row['user_Firstname']; ?></td>
-                    <td width="5%"><?= $row['user_Lastname']; ?></td>
-                    <td width="2%"><a href="form_edit.php?user_ID=<?= $row['user_ID']; ?>" style="text-decoration: none;color: blue;">แก้ไข</a></td>
-                    <td width="2%"><a href="showdata.php?user_ID=<?= $row['user_ID']; ?>" style="text-decoration: none;color: red;">ลบ</a></td>
+                    <td width="5%"><?= $row['api_ID']; ?></td>
+                    <td width="5%"><?= $row['summary']; ?></td>
+                    <td width="5%"><?= $row['description']; ?></td>
+                    <td width="5%"><?= $row['operationId']; ?></td>
+                    <td width="5%"><?= $row['parameters']; ?></td>
+                    <td width="2%"><a href="form_edit.php?api_ID=<?= $row['api_ID']; ?>" style="text-decoration: none;color: blue;">แก้ไข</a></td>
+                    <td width="2%"><a href="showdata.php?api_ID=<?= $row['api_ID']; ?>" style="text-decoration: none;color: red;">ลบ</a></td>
                 </tr>
         <?php
             }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>addapi</title>
 </head>
 <style>
     body{
@@ -85,29 +85,37 @@
 </style>
 <body>
     
-    <form action="register.php" method="post">
-        <button style="text-align: center;"><a href="login.html" style="text-decoration: none;color: black;">ออกระบบ</a></button>
+    <form action="addapi_db.php" method="post">
+        <button style="text-align: center;"><a href="showdata.php" style="text-decoration: none;color: black;">ย้อนกลับ</a></button>
         <div class="wrapper">
             <h2>เพิ่มข้อมูล API</h2>
 
+            <label for="">Method</label>
+            <select name="method" id="">
+                <option value="1">post</option>
+                <option value="2">get</option>
+                <option value="3">put</option>
+                <option value="4">del</option>
+            </select>
+
             <div class="text">
-                <label for="">Username</label>
-                <input type="text" name="Username" placeholder="Username" ><br>    
+                <label for="">summary</label>
+                <input type="text" name="summary" placeholder="summary" ><br>    
             </div>
     
             <div class="text">
-                <label for="">Password</label>
-                <input type="text" name="Password" placeholder="Password"><br>
+                <label for="">description</label>
+                <input type="text" name="description" placeholder="description"><br>
             </div>
     
             <div class="text">
-                <label for="">Firstname</label>
-                <input type="text" name="Firstname" placeholder="Firstname"><br>
+                <label for="">operationId</label>
+                <input type="text" name="operationId" placeholder="operationId"><br>
             </div>
     
             <div class="text">
-                <label for="">Lastname</label>
-                <input type="text" name="Lastname" placeholder="Lastname"><br>    
+                <label for="">parameters</label>
+                <input type="text" name="parameters" placeholder="parameters"><br>    
             </div>
         
             <input class="submit" type="submit" value="บันทึก">
