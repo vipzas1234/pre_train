@@ -59,7 +59,7 @@
     }
 
     if ($result) {
-        echo json_encode($data);
+        // echo json_encode($data);
     ?>
     
         <div class="wrapper">

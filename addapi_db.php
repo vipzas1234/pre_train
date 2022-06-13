@@ -141,7 +141,8 @@
 
 
     if ($result) {
-        echo json_encode($data);
+        // $data = json_encode($data);
+        // echo json_encode($data);
 
         // ตัวเขียนไฟล์
         // w คือเขียนทับ 

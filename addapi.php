@@ -85,6 +85,10 @@
         height: 30px;
         border-radius: 8px;
     }
+    select{
+        width: 200px;
+        height: 30px;
+    }
 </style>
 
 <body>

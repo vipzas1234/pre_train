@@ -5,21 +5,45 @@
         "title": "Service for creating, adding\/deleting\/editing users"
     },
     "paths": {
-        "Register": {
+        "sad": {
             "post": {
-                "summary": "dsad",
-                "description": "dsadsds",
-                "operationId": "ddddddddddddddddd",
+                "summary": "asd",
+                "description": "sads",
+                "operationId": "sdsdsdvcx",
+                "produces": [
+                    "application\/json"
+                ],
                 "parameters": [
-                    "aaa"
+                    {
+                        "name": "vcxv",
+                        "in": "formData",
+                        "description": "cxv",
+                        "required": false,
+                        "type": "xcv"
+                    }
                 ],
                 "responses": {
                     "200": {
-                        "description": "sucssess"
+                        "description": "sucssess",
+                        "schema": {
+                            "$ref": "#\/definitions\/vcxv"
+                        }
                     },
                     "401": {
                         "description": "The access token provided is invalid"
                     }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "vcxv": {
+            "type": "object",
+            "properties": {
+                "cxv": {
+                    "type": "dsf",
+                    "description": "dsf",
+                    "example": "dsf"
                 }
             }
         }
