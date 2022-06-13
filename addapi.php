@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +8,10 @@
     <title>addapi</title>
 </head>
 <style>
-    body{
+    body {
         text-align: center;
     }
+
     .btn {
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -63,7 +64,8 @@
     .text {
         margin: 15px;
     }
-    .wrapper{
+
+    .wrapper {
         border: 1;
         background-color: rgb(223, 242, 255);
         text-align: center;
@@ -71,10 +73,11 @@
         margin-left: 300px;
         margin-right: 300px;
         padding: 0px;
-        padding-bottom:20px ;
-        
+        padding-bottom: 20px;
+
     }
-    .submit{
+
+    .submit {
         margin-left: 15px;
         background-color: gray;
         color: white;
@@ -83,8 +86,9 @@
         border-radius: 8px;
     }
 </style>
+
 <body>
-    
+
     <form action="addapi_db.php" method="post">
         <button style="text-align: center;"><a href="showdata.php" style="text-decoration: none;color: black;">ย้อนกลับ</a></button>
         <div class="wrapper">
@@ -97,27 +101,54 @@
                 <option value="3">put</option>
                 <option value="4">del</option>
             </select>
-
+            <div class="text">
+                <label for="">path</label>
+                <input type="text" name="path" placeholder="path"><br>
+            </div>
             <div class="text">
                 <label for="">summary</label>
-                <input type="text" name="summary" placeholder="summary" ><br>    
+                <input type="text" name="summary" placeholder="summary">
+
             </div>
-    
+
             <div class="text">
                 <label for="">description</label>
                 <input type="text" name="description" placeholder="description"><br>
             </div>
-    
+
             <div class="text">
                 <label for="">operationId</label>
                 <input type="text" name="operationId" placeholder="operationId"><br>
             </div>
-    
+
+            <h1>Parameters</h1>
+ 
             <div class="text">
-                <label for="">parameters</label>
-                <input type="text" name="parameters" placeholder="parameters"><br>    
+                <label for="">parameters_name</label>
+                <input type="text" name="parameters" placeholder="parameters_Name">
+                <label for="">parameters_description</label>
+                <input type="text" name="parameters_description" placeholder="คำอธิบาย"><br> <br>
+                <label for="">parameters_required</label>
+                <select name="parameters_required" placeholder="required(true or false)">
+                    <option value="1">ture</option>
+                    <option value="2">false</option>
+                </select>
+                <label for="">parameters_type</label>
+                <input type="text" name="parameters_type" placeholder="Type">
             </div>
-        
+
+            <h1>Schema</h1>
+            <label for="">Schema_type</label>
+                <input type="text" name="Schema_type" placeholder="ประเภท Schema"><br> <br>
+            <div class="text">
+                <label for="">properties_name</label>
+                <input type="text" name="properties_name" placeholder="ชื่อข้อมูล"><br> <br>
+                <label for="">properties_type</label>
+                <input type="text" name="properties_type" placeholder="ชนิดข้อมูล"><br> <br>
+                <label for="">properties_example</label>
+                <input type="text" name="properties_example" placeholder="ตัวอย่างข้อมูล">
+            </div>
+
             <input class="submit" type="submit" value="บันทึก">
 
 
@@ -126,4 +157,5 @@
 
 
 </body>
+
 </html>

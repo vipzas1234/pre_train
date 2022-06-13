@@ -77,11 +77,11 @@ if (isset($_GET['api_ID'])) {
 
     <table border="1" cellspacing="0" style="margin-top:20px;">
         <tr>
-            <th>user_ID</th>
-            <th>user_Username</th>
-            <th>user_Password</th>
-            <th>user_Firstname</th>
-            <th>user_Lastname</th>
+            <th>Api_ID</th>
+            <th>summary</th>
+            <th>description</th>
+            <th>operationId</th>
+            <th>parametersName</th>
             <th colspan="2">manage</th>
         </tr>
         <?php

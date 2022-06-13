@@ -32,13 +32,23 @@
 <body>
 
     <?php
-    include "database.php";
 
+    include "database.php";
+    $path = $_POST['path'];
     $summary = $_POST['summary'];
     $description = $_POST['description'];
     $operationId = $_POST['operationId'];
     $parameters = $_POST['parameters'];
+    $parameters_in = "formData";
+    $schema_path = "definitions";
+    $parameters_description = $_POST['parameters_description'];
+    $parameters_required = $_POST['parameters_required'];;
+    $parameters_type = $_POST['parameters_type'];
     $method = $_POST['method'];
+    $Schema_type  = $_POST['Schema_type'];
+    $properties_name = $_POST['properties_name'];
+    $properties_type = $_POST['properties_type'];
+    $properties_example = $_POST['properties_example'];
     // echo $Username ,"<br>";
     // echo $Password ,"<br>";
     // echo $Firstname, "<br>";
@@ -58,6 +68,11 @@
     $result1 = mysqli_query($conn, $query1);
     $num_rows = mysqli_num_rows($result1);
 
+    if ($parameters_required == 1) {
+        $parameters_required = true;
+    } else {
+        $parameters_required = false;
+    }
     // ข้อมูลส่งเข้าไปไฟล์ json //
     $data = array(
 
@@ -69,23 +84,36 @@
         ),
 
         'paths' => array(
-            'Register' => array(
+            $path => array(
                 $method => array(
-
                     'summary' => $summary,
                     'description' => $description,
                     'operationId' => $operationId,
+                    "produces" => [
+                        "application/json"
+                    ],
 
 
                     // ฐานข้อมูลของ parameters ที่มันมีหลายอัน ถ้าแสดงไม่ได้ก็ปล่อยไปเลย
                     // $parameters = array([
 
                     // ]),
-
-                    'parameters' => [$parameters],
+                    'parameters' => array(
+                        [
+                            'name' => $parameters,
+                            'in' => $parameters_in,
+                            'description' => $parameters_description,
+                            'required' => $parameters_required,
+                            'type' => $parameters_type,
+                        ]
+                    ),
                     'responses' => array(
                         '200' => array(
-                            'description' => 'sucssess'
+                            'description' => 'sucssess',
+                            'schema' => array(
+                                '$ref' =>  "#" . "/" . $schema_path . "/" . $parameters
+                            )
+
                         ),
                         '401' => array(
                             'description' => 'The access token provided is invalid'
@@ -94,6 +122,18 @@
                 )
             )
         ),
+        'definitions' => array(
+            $parameters => array(
+                'type' => $Schema_type,
+                'properties' => array(
+                    $properties_name => array(
+                        "type" => $properties_type,
+                        "description" => $properties_example,
+                        "example" =>  $properties_example,
+                    ),
+                ),
+            ),
+        )
 
 
 
