@@ -5,31 +5,35 @@
         "title": "Service for creating, adding\/deleting\/editing users"
     },
     "paths": {
-        "sad": {
-            "post": {
-                "summary": "asd",
-                "description": "sads",
-                "operationId": "sdsdsdvcx",
+        "give": {
+            "get": {
+                "summary": "\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e2a\u0e48\u0e07\u0e44\u0e14\u0e49",
+                "description": "\u0e2a\u0e32\u0e21\u0e32\u0e23\u0e16\u0e2a\u0e48\u0e07\u0e44\u0e14\u0e49",
+                "operationId": "giveto",
                 "produces": [
                     "application\/json"
                 ],
                 "parameters": [
                     {
-                        "name": "vcxv",
+                        "name": "name",
                         "in": "formData",
-                        "description": "cxv",
+                        "description": "sad",
                         "required": false,
-                        "type": "xcv"
+                        "type": "string"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "sucssess",
                         "schema": {
-                            "$ref": "#\/definitions\/vcxv"
+                            "$ref": "#\/definitions\/name"
                         }
                     },
                     "401": {
+                        "schema":{
+                            "$ref": "#\/definitions\/detial"
+                        },
+                    
                         "description": "The access token provided is invalid"
                     }
                 }
@@ -37,13 +41,23 @@
         }
     },
     "definitions": {
-        "vcxv": {
+        "name": {
             "type": "object",
             "properties": {
-                "cxv": {
-                    "type": "dsf",
-                    "description": "dsf",
-                    "example": "dsf"
+                "name_id": {
+                    "type": "string",
+                    "description": "01",
+                    "example": "01"
+                }
+            }
+        },
+        "detial": {
+            "type": "object",
+            "properties": {
+                "name_id": {
+                    "type": "string",
+                    "description": "01",
+                    "example": "01"
                 }
             }
         }
